@@ -26,6 +26,8 @@ def titleTransform(titlelist):
             for k in stringlist:
                 if len(k) > 1:
                     j = re.sub(k, " " + k, j)
+            if re.match("2[0-9]",j):
+                j = j[0:4]
             strvec[i] = j
         s = ''
         for ff in strvec:
