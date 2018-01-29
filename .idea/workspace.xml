@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="658b5728-88e6-4ee9-a25d-3c7da60deebf" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/metadata_extracter.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/metadata_search.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/query_cleaner.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/query_transformer.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/testfile.txt" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/untitled2.iml" afterPath="$PROJECT_DIR$/.idea/GDSCCapgemini.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cleaning_module.py" afterPath="$PROJECT_DIR$/cleaning_module.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/metadata_search.py" afterPath="$PROJECT_DIR$/metadata_search.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test_module.py" afterPath="$PROJECT_DIR$/test_module.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,8 +31,8 @@
       <file leaf-file-name="cleaning_module.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cleaning_module.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state relative-caret-position="323">
+              <caret line="16" column="50" lean-forward="false" selection-start-line="16" selection-start-column="50" selection-end-line="16" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -47,8 +41,8 @@
       <file leaf-file-name="test_module.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test_module.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="29" column="34" lean-forward="false" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
+            <state relative-caret-position="281">
+              <caret line="26" column="14" lean-forward="false" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -71,8 +65,20 @@
       <file leaf-file-name="metadata_search.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/metadata_search.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state relative-caret-position="147">
+              <caret line="7" column="29" lean-forward="false" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="toplist.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/toplist.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="6" column="26" lean-forward="false" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -98,10 +104,11 @@
         <option value="$PROJECT_DIR$/ppt_to_pdf_module.py" />
         <option value="$PROJECT_DIR$/metadata_extracter.py" />
         <option value="$PROJECT_DIR$/query_cleaner.py" />
-        <option value="$PROJECT_DIR$/cleaning_module.py" />
         <option value="$PROJECT_DIR$/query_transformer.py" />
-        <option value="$PROJECT_DIR$/test_module.py" />
+        <option value="$PROJECT_DIR$/toplist.py" />
         <option value="$PROJECT_DIR$/metadata_search.py" />
+        <option value="$PROJECT_DIR$/cleaning_module.py" />
+        <option value="$PROJECT_DIR$/test_module.py" />
       </list>
     </option>
   </component>
@@ -523,16 +530,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ppt_to_pdf_module.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="50" lean-forward="false" selection-start-line="12" selection-start-column="50" selection-end-line="12" selection-end-column="50" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/metadata_extracter.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="63">
@@ -549,11 +546,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cleaning_module.py">
+    <entry file="file://$PROJECT_DIR$/toplist.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="26" lean-forward="false" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ppt_to_pdf_module.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
+          <caret line="12" column="50" lean-forward="false" selection-start-line="12" selection-start-column="50" selection-end-line="12" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -569,16 +576,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/metadata_search.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state relative-caret-position="147">
+          <caret line="7" column="29" lean-forward="false" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cleaning_module.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="16" column="50" lean-forward="false" selection-start-line="16" selection-start-column="50" selection-end-line="16" selection-end-column="50" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test_module.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="29" column="34" lean-forward="false" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
+        <state relative-caret-position="281">
+          <caret line="26" column="14" lean-forward="false" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>

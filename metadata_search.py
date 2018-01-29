@@ -1,7 +1,11 @@
 import re
 import numpy as np
+import cleaning_module as cl
+from query_transformer import queryClean
 
 def metaScore(query,filelist,a,b):
+    filelist = cl.titleTransform(filelist)
+    query = queryClean(query)
     l = list()
     l2 = list()
     qvec = query.split(" ")
