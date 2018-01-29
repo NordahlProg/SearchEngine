@@ -7,14 +7,13 @@ def regex_clean(text):
     newtext = re.sub(r"(\\r)+", " ", newtext)
     newtext = re.sub("b'|'", "", newtext)
     newtext = re.sub("\"|b\"", "", newtext)
-    newtext = re.sub(" {2,}", " ", newtext)
-    newtext = re.sub("\(|\)","", newtext)
+    newtext = re.sub(" {2,}|-", " ", newtext)
+    newtext = re.sub("[\(\)'?!&_.,]","", newtext)
     return newtext
 
 def regex_titleclean(title):
-    newtitle = re.sub("_", " ", title)
-    newtitle = re.sub(" {2,}"," ",newtitle)
-    newtitle = re.sub(".pdf","",newtitle)
+    newtitle = re.sub(" {2,}|[_-]"," ",title)
+    newtitle = re.sub("[&'\(\)]|.pdf","",newtitle)
     return newtitle
 
 def titleTransform(titlelist):
@@ -32,7 +31,8 @@ def titleTransform(titlelist):
         s = ''
         for ff in strvec:
             s = s + " " + ff
-        titlelist[m] = s
+        s = s.lower()
+        titlelist[m] = re.sub(" {2,}"," ",s)
     return titlelist
 
 
