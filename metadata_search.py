@@ -1,14 +1,22 @@
 import re
+import numpy as np
 
-def tf(query,filelist):
-    qvec = query.split(" ")
+def metaScore(query,filelist,a,b):
     l = list()
+    l2 = list()
+    qvec = query.split(" ")
+    match = re.search("20[0-9][0-9]", query)
     for d in filelist:
         dvec = d.split(" ")
         l.append(len(set(qvec)&set(dvec)))
-    return l
 
-def containsYear(query):
-    return re.search("20[0-9][0-9]",query)
-
-
+    if(match):
+        year = match.group(0)
+        for d in filelist:
+            if year in d:
+                l2.append(1)
+            else:
+                l2.append(0)
+    else:
+        l2 = [0]*len(filelist)
+    return a*np.asarray(l) + b*np.asarray(l2)
