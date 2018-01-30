@@ -1,4 +1,9 @@
 import re
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+from nltk.stem import PorterStemmer
+import textract
+
 
 def regex_clean(text):
     newtext = re.sub(r"\\x..", "", text)
@@ -8,14 +13,13 @@ def regex_clean(text):
     newtext = re.sub("b'", "", newtext)
     newtext = re.sub("\"|b\"", "", newtext)
     newtext = re.sub(" {2,}|-", " ", newtext)
-    newtext = re.sub("[\(\)'?!&_.,;%:\|\/]|[0-9]","", newtext)
+    newtext = re.sub("['?!+&_.,;%><*=@¤#£¨^$~:\[\]\{\}\|\/\(\)]|[0-9]","", newtext)
     newtext = newtext.lower()
     return newtext
 
 def regex_titleclean(title):
     newtitle = re.sub(" {2,}|[_-]"," ",title)
     newtitle = re.sub("[&'\(\)]|.pdf","",newtitle)
-    newtitle = newtitle.lower()
     return newtitle
 
 def titleTransform(titlelist):
@@ -36,3 +40,15 @@ def titleTransform(titlelist):
         s = s.lower()
         titlelist[m] = re.sub(" {2,}"," ",s)
     return titlelist
+
+def bodyTextTransform(titlelist):
+    l = list()
+    stops = set(stopwords.words('english'))
+    ps = PorterStemmer()
+    for d in titlelist:
+        text = regex_clean(str(textract.process(d)))
+        words = word_tokenize(text)
+        filtered = [w for w in words if not w in stops]
+        stemmedWords = [ps.stem(w) for w in filtered]
+        l.append(stemmedWords)
+    return l
