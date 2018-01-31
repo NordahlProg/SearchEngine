@@ -4,8 +4,6 @@ from sklearn.feature_extraction.text import CountVectorizer
 import cleaning_module as cl
 from sklearn.metrics.pairwise import cosine_similarity
 
-
-
 def tfidf(query,filelist):
     query = cl.regex_clean(query)
     l = cl.bodyTextTransform(filelist, query)
