@@ -3,6 +3,7 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from nltk.stem import PorterStemmer
 import textract
+import query_transformer
 
 
 def regex_clean(text):
@@ -41,7 +42,7 @@ def titleTransform(titlelist):
         titlelist[m] = re.sub(" {2,}"," ",s)
     return titlelist
 
-def bodyTextTransform(titlelist):
+def bodyTextTransform(titlelist,query):
     l = list()
     stops = set(stopwords.words('english'))
     ps = PorterStemmer()
@@ -50,5 +51,7 @@ def bodyTextTransform(titlelist):
         words = word_tokenize(text)
         filtered = [w for w in words if not w in stops]
         stemmedWords = [ps.stem(w) for w in filtered]
+        stemmedWords = ' '.join(stemmedWords)
         l.append(stemmedWords)
+    l.append(query_transformer.queryTransform(query))
     return l

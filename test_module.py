@@ -1,35 +1,26 @@
-import nltk
-import textract
 import os
 import spacy
 import ppt_to_pdf_module
-from nltk.tag.stanford import StanfordNERTagger
-from nltk.tokenize import word_tokenize
-from nltk.stem import PorterStemmer
-from nltk.corpus import wordnet as wn
-from nltk.tokenize import PunktSentenceTokenizer
 from metadata_search import metaScore
-import toplist
-from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize
+from toplist import topList
+from sklearn.feature_extraction.text import TfidfTransformer
+from sklearn.feature_extraction.text import CountVectorizer
 import cleaning_module as cl
-nltk.download('stopwords')
+from sklearn.metrics.pairwise import cosine_similarity
+from tf_idf_model import tfidf
+
+
 
 a=1
-b=3
-
+b=1
 dir = "C:/Users/tnordahl/Desktop/GDSCDataSet/Presentations/train_data"
 os.chdir(dir)
 filelist = os.listdir()
 filelist2 = os.listdir()
-query = "audi 2012"
-stops = set(stopwords.words('english'))
-d = filelist[8]
-text = cl.regex_clean(str(textract.process(d)))
-words = word_tokenize(text)
-filtered = [w for w in words if not w in stops]
-for f in filtered:
-    print(f)
+query = "watson 2016"
 
-#meta_scores = metaScore(query,filelist2,a,b)
-#toplist.topList(meta_scores,filelist)
+vec1 = metaScore(query,filelist,a,b)
+vec2 = tfidf(query,filelist2)
+vec3 = vec1+vec2
+
+print(topList(vec3,filelist2))

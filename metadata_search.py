@@ -10,10 +10,6 @@ def metaScore(query,filelist,a,b):
     l2 = list()
     qvec = query.split(" ")
     match = re.search("20[0-9][0-9]", query)
-    for d in filelist:
-        dvec = d.split(" ")
-        l.append(len(set(qvec)&set(dvec)))
-
     if(match):
         year = match.group(0)
         for d in filelist:
@@ -23,4 +19,9 @@ def metaScore(query,filelist,a,b):
                 l2.append(0)
     else:
         l2 = [0]*len(filelist)
+
+    for d in filelist:
+        d = re.sub("[0-9]","",d)
+        dvec = d.split(" ")
+        l.append(len(set(qvec)&set(dvec)))
     return a*np.asarray(l) + b*np.asarray(l2)
