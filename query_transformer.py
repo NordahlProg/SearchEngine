@@ -9,12 +9,13 @@ def queryClean(q):
     q = re.sub("['?!+&_.,;%><*=@¤#£¨^$~:\[\]\{\}\|\/\(\)]","", q)
     return q
 
-def queryTransform(q):
+def queryTransform(q,stemming):
     q = queryClean(q)
-    ps = PorterStemmer()
     words = word_tokenize(q)
     stops = set(stopwords.words('english'))
-    filtered = [w for w in words if not w in stops]
-    q = [ps.stem(w) for w in filtered]
+    q = [w for w in words if not w in q]
+    if stemming:
+        ps = PorterStemmer()
+        q = [ps.stem(w) for w in q]
     q = ' '.join(q)
     return q

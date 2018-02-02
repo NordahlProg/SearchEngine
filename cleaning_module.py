@@ -42,16 +42,17 @@ def titleTransform(titlelist):
         titlelist[m] = re.sub(" {2,}"," ",s)
     return titlelist
 
-def bodyTextTransform(titlelist,query):
+def bodyTextTransform(titlelist,query,stemming):
     l = list()
     stops = set(stopwords.words('english'))
-    ps = PorterStemmer()
     for d in titlelist:
         text = regex_clean(str(textract.process(d)))
         words = word_tokenize(text)
         filtered = [w for w in words if not w in stops]
-        stemmedWords = [ps.stem(w) for w in filtered]
-        stemmedWords = ' '.join(stemmedWords)
-        l.append(stemmedWords)
+        if stemming:
+            ps = PorterStemmer()
+            filtered = [ps.stem(w) for w in filtered]
+        filtered = ' '.join(filtered)
+        l.append(filtered)
     l.append(query_transformer.queryTransform(query))
     return l

@@ -8,7 +8,7 @@ nlp = spacy.load('en_core_web_lg')
 
 def metaScore(query,filelist,a,b,c):
     filelist = cl.titleTransform(filelist)
-    query = queryTransform(query)
+    query = queryTransform(query,stemming=False)
     doc1 = nlp(query)
     l = list()
     l2 = list()
